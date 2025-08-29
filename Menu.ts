@@ -30,7 +30,7 @@ export function main(){
         colors.reset);
 
 
-        console.log(colors.bg.black, colors.fg.yellow, 'Entre com a opcao desejada: ', colors.reset);
+        console.log(colors.bg.black, colors.fg.blue, 'Entre com a opcao desejada: ', colors.reset);
         opcao = leia.questionInt('');
 
         if (opcao == 9){
