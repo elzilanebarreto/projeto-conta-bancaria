@@ -3,6 +3,9 @@
 /node_modules
 nodemon.json
 
+# Orientações de inicialização
+orientacoes.txt
+
 # Logs
 logs
 *.log
