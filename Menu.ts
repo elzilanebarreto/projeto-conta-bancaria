@@ -81,9 +81,6 @@ export function main(){
                 console.log('\nDigite o tipo de Conta: ');
                 tipo = leia.keyInSelect(tiposContas, '', {cancel: false}) + 1;
 
-                console.log('Digite o Saldo da Conta (R$): ');
-                agencia = leia.questionFloat('');
-
                 console.log('\n Digite o Saldo da conta (R$): ');
                 saldo = leia.questionFloat('');
 
@@ -131,9 +128,6 @@ export function main(){
                 break;
             
             case 4:
-                console.log(colors.fg.whitestrong,
-                    '\n\nAtualizar dados da Conta\n\n', colors.reset);
-
                 console.log(`${colors.fg.whitestrong}\n\nAtualizar dados da Conta\n\n ${colors.reset}`);
 
                 console.log('Digite o numero da Conta: ');
@@ -183,6 +177,12 @@ export function main(){
             case 5:
                 console.log(colors.fg.whitestrong,
                     '\n\nApagar uma Conta\n\n', colors.reset);
+                
+                console.log('Digite o numero da Conta: ');
+                numero = leia.questionInt('');
+                contas.deletar(numero);
+
+                keyPress();
                 break;
 
             case 6:
