@@ -11,26 +11,26 @@ export function main(){
     let contas: ContaController = new ContaController();
 
     // Variáveis Auxiliares
-    let opcao, numero, agencia, tipo, saldo, limite, aniversario: number;
+    let opcao, numero, agencia, tipo, saldo, limite, aniversario, valor, numeroDestino: number;
     let titular: string;
     const tiposContas = ['Conta Corrente', 'Conta Poupanca'];
 
+    console.log("\nCriar Contas\n");
 
-    // Objeto da Classe ContaCorrente 
-    const contacorrente: ContaCorrente = new ContaCorrente(2, 123, 1, 'Mariana', 15000, 1000);
-    contacorrente.visualizar();
-    contacorrente.sacar(2000);
-    contacorrente.visualizar();
-    contacorrente.depositar(1000);
-    contacorrente.visualizar();
+    let contaCor1: ContaCorrente = new ContaCorrente(contas.gerarNumero(), 123, 1, "João da Silva", 1000, 100.0);
+    contas.cadastrar(contaCor1);
 
-    // Objeto da Classe ContaPoupanca
-    const contapoupanca: ContaPoupanca = new ContaPoupanca(3, 123, 2, 'Victor', 1000, 10);
-    contapoupanca.visualizar();
-    contapoupanca.sacar(200);
-    contapoupanca.visualizar();
-    contapoupanca.depositar(1000);
-    contapoupanca.visualizar();
+    let contaCor2: ContaCorrente = new ContaCorrente(contas.gerarNumero(), 124, 1, "Maria da Silva", 2000, 100.0);
+    contas.cadastrar(contaCor2);
+
+    let contaPou1: ContaPoupanca = new ContaPoupanca(contas.gerarNumero(), 125, 2, "Mariana dos Santos", 4000, 12);
+    contas.cadastrar(contaPou1);
+
+    let contaPou2: ContaPoupanca = new ContaPoupanca(contas.gerarNumero(), 125, 2, "Juliana Ramos", 8000, 15);
+    contas.cadastrar(contaPou2);
+
+    contas.listarTodas();
+
 
     while (true){
 
@@ -160,7 +160,7 @@ export function main(){
                             console.log('Digite o Dia do Aniversario da Conta Poupanca: ');
                             aniversario = leia.questionInt('');
                             contas.atualizar(
-                                new ContaPoupanca(contas.gerarNumero(), agencia, tipo, titular, saldo, aniversario)
+                                new ContaPoupanca(numero, agencia, tipo, titular, saldo, aniversario)
                             );
                             break;
                     }
@@ -188,16 +188,49 @@ export function main(){
             case 6:
                 console.log(colors.fg.whitestrong,
                     '\n\nSaque\n\n', colors.reset);
+                
+                console.log('Digite o numero da Conta: ');
+                numero = leia.questionInt('');
+
+                console.log('\nDigite o valor do Saque (R$): ');
+                valor = leia.questionFloat('');
+
+                contas.sacar(numero, valor);
+                    
+                keyPress();    
                 break;
             
             case 7:
                 console.log(colors.fg.whitestrong,
                     '\n\nDeposito\n\n', colors.reset);
+                
+                console.log('Digite o numero da Conta: ');
+                numero = leia.questionInt('');    
+                
+                console.log('Digite o valor do Deposito (R$): ');
+                valor = leia.questionFloat('');
+                
+                contas.depositar(numero, valor);
+                    
+                keyPress();    
                 break;
             
             case 8:
                 console.log(colors.fg.whitestrong,
                     '\n\nTransferencia entre Contas\n\n', colors.reset);
+                
+                console.log('Digite o numero da Conta de Origem: ');
+                numero = leia.questionInt('');
+                
+                console.log('Digite o numero da Conta de Destino: ');
+                numeroDestino = leia.questionInt('');
+
+                console.log('\nDigite o valor do Deposito (R$): ');
+                valor = leia.questionFloat('');
+
+                contas.transferir(numero, numeroDestino, valor);
+                
+                keyPress();    
                 break;
 
             default:
