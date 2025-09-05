@@ -25,10 +25,18 @@ Por meio da aplicação de conceitos de **POO (Programação Orientada a Objetos
 
 ---
 
----
-
 ## ▶️ Como Executar
 1. Clone este repositório:
    ```bash
    git clone https://github.com/seu-usuario/sistema-bancario.git
+2. Inicie o Node
+   ```bash
+    npm init -y
+3. Execute usando o TypeScript
+   ```bash
+    ts-node Menu.js
+---
 
+👩🏽‍💻 Autora
+
+Desenvolvido por Elzilane Barreto ✨
