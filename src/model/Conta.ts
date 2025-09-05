@@ -82,15 +82,15 @@ export abstract class Conta {
                 break;
             
             case 2: 
-                tipo = 'Conta Poupanca';
+                tipo = 'Conta Poupança';
                 break;
         }
 
         console.log(`${colors.fg.red}\n\n***************************************************** ${colors.reset}`);
         console.log("Dados da Conta:");
         console.log(`${colors.fg.red}***************************************************** ${colors.reset}`);
-        console.log(`Numero da Conta: ${this._numero}`);
-        console.log(`Agencia: ${this._agencia}`);
+        console.log(`Número da Conta: ${this._numero}`);
+        console.log(`Agência: ${this._agencia}`);
         console.log(`Tipo da Conta: ${tipo}`);
         console.log(`Titular: ${this._titular}`);
         console.log(`Saldo: ${this._saldo.toFixed(2)}`);

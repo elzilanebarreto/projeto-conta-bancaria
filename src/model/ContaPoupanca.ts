@@ -20,6 +20,6 @@ export class ContaPoupanca extends Conta{
     // Polimorfismo (ou Override)
     public visualizar(): void {
         super.visualizar();
-        console.log(`Dia do aniversario: ${this._aniversario}`);
+        console.log(`Dia do aniversário: ${this._aniversario}`);
     }
 }

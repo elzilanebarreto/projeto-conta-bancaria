@@ -57,12 +57,12 @@ export function main(){
         colors.reset);
 
 
-        console.log(colors.bg.black, colors.fg.blue, 'Entre com a opcao desejada: ', colors.reset);
+        console.log(colors.bg.black, colors.fg.blue, 'Entre com a opção desejada: ', colors.reset);
         opcao = leia.questionInt('');
 
         if (opcao == 9){
             console.log(colors.fg.greenstrong,
-                '\nBanco do Brazil com Z - O seu Futuro comeca aqui!');
+                '\nBanco do Brazil com Z - O seu Futuro começa aqui!');
             sobre();
             console.log(colors.reset, '');
             process.exit(0);
@@ -72,7 +72,7 @@ export function main(){
             case 1:
                 console.log(colors.fg.whitestrong, '\n\nCriar Conta\n\n', colors.reset);
 
-                console.log('Digite o Numero da Agencia: ');
+                console.log('Digite o Número da Agência: ');
                 agencia = leia.questionInt('');
 
                 console.log('Digite o Nome do Titular da conta: ');
@@ -95,7 +95,7 @@ export function main(){
                         break;
                     
                     case 2:
-                        console.log('Digite o Dia do Aniversario da Conta Poupanca: ');
+                        console.log('Digite o Dia do Aniversário da Conta Poupanca: ');
                         aniversario = leia.questionFloat('');
                         contas.cadastrar(
                             new ContaPoupanca(contas.gerarNumero(), agencia, tipo, titular, saldo, aniversario)
@@ -118,9 +118,9 @@ export function main(){
 
             case 3:
                 console.log(colors.fg.whitestrong,
-                    '\n\nConsultar dados da Conta - por numero\n\n', colors.reset);
+                    '\n\nConsultar dados da Conta - por número\n\n', colors.reset);
 
-                console.log('Digite o numero da Conta: ');
+                console.log('Digite o número da Conta: ');
                 numero = leia.questionInt('');
                 contas.procurarPorNumero(numero);
 
@@ -130,13 +130,13 @@ export function main(){
             case 4:
                 console.log(`${colors.fg.whitestrong}\n\nAtualizar dados da Conta\n\n ${colors.reset}`);
 
-                console.log('Digite o numero da Conta: ');
+                console.log('Digite o número da Conta: ');
                 numero = leia.questionInt('');
 
                 let conta = contas.buscarNoArray(numero);
 
                 if(conta != null){
-                    console.log('Digite o numero da agencia: ');
+                    console.log('Digite o número da agência: ');
                     agencia = leia.questionInt('');
 
                     console.log('Digite o Nome do Titular da conta: ');
@@ -157,7 +157,7 @@ export function main(){
                             );
                             break;
                         case 2:
-                            console.log('Digite o Dia do Aniversario da Conta Poupanca: ');
+                            console.log('Digite o Dia do Aniversário da Conta Poupanca: ');
                             aniversario = leia.questionInt('');
                             contas.atualizar(
                                 new ContaPoupanca(numero, agencia, tipo, titular, saldo, aniversario)
@@ -167,7 +167,7 @@ export function main(){
 
 
                 } else{
-                    console.log(`${colors.fg.red} \nA Conta numero: ${numero} nao foi encontrada! ${colors.reset}`);
+                    console.log(`${colors.fg.red} \nA Conta número: ${numero} não foi encontrada! ${colors.reset}`);
                 }
 
                 
@@ -178,7 +178,7 @@ export function main(){
                 console.log(colors.fg.whitestrong,
                     '\n\nApagar uma Conta\n\n', colors.reset);
                 
-                console.log('Digite o numero da Conta: ');
+                console.log('Digite o número da Conta: ');
                 numero = leia.questionInt('');
                 contas.deletar(numero);
 
@@ -189,7 +189,7 @@ export function main(){
                 console.log(colors.fg.whitestrong,
                     '\n\nSaque\n\n', colors.reset);
                 
-                console.log('Digite o numero da Conta: ');
+                console.log('Digite o número da Conta: ');
                 numero = leia.questionInt('');
 
                 console.log('\nDigite o valor do Saque (R$): ');
@@ -202,12 +202,12 @@ export function main(){
             
             case 7:
                 console.log(colors.fg.whitestrong,
-                    '\n\nDeposito\n\n', colors.reset);
+                    '\n\nDepósito\n\n', colors.reset);
                 
-                console.log('Digite o numero da Conta: ');
+                console.log('Digite o número da Conta: ');
                 numero = leia.questionInt('');    
                 
-                console.log('Digite o valor do Deposito (R$): ');
+                console.log('Digite o valor do Depósito (R$): ');
                 valor = leia.questionFloat('');
                 
                 contas.depositar(numero, valor);
@@ -219,13 +219,13 @@ export function main(){
                 console.log(colors.fg.whitestrong,
                     '\n\nTransferencia entre Contas\n\n', colors.reset);
                 
-                console.log('Digite o numero da Conta de Origem: ');
+                console.log('Digite o número da Conta de Origem: ');
                 numero = leia.questionInt('');
                 
-                console.log('Digite o numero da Conta de Destino: ');
+                console.log('Digite o número da Conta de Destino: ');
                 numeroDestino = leia.questionInt('');
 
-                console.log('\nDigite o valor do Deposito (R$): ');
+                console.log('\nDigite o valor do Depósito (R$): ');
                 valor = leia.questionFloat('');
 
                 contas.transferir(numero, numeroDestino, valor);
@@ -235,7 +235,7 @@ export function main(){
 
             default:
                 console.log(colors.fg.whitestrong,
-                    '\n\nOpcao invalida!\n', colors.reset);
+                    '\n\nOpcao inválida!\n', colors.reset);
                 
                 keyPress();    
                 break;
