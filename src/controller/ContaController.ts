@@ -5,7 +5,7 @@ import { colors } from "../util/Colors";
 export class ContaController implements ContaRepository{
 
     private listaContas: Array<Conta> = new Array<Conta>();
-    numero: number = 0;
+    numero: number = 0; //Para criação de contar
 
     procurarPorNumero(numero: number): void {
         let buscaConta = this.buscarNoArray(numero);

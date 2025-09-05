@@ -17,17 +17,17 @@ export function main(){
 
     console.log("\nCriar Contas\n");
 
-    let contaCor1: ContaCorrente = new ContaCorrente(contas.gerarNumero(), 123, 1, "João da Silva", 1000, 100.0);
-    contas.cadastrar(contaCor1);
+    let cc1: ContaCorrente = new ContaCorrente(contas.gerarNumero(), 123, 1, "João da Silva", 1000, 100.0);
+    contas.cadastrar(cc1);
 
-    let contaCor2: ContaCorrente = new ContaCorrente(contas.gerarNumero(), 124, 1, "Maria da Silva", 2000, 100.0);
-    contas.cadastrar(contaCor2);
+    let cc2: ContaCorrente = new ContaCorrente(contas.gerarNumero(), 124, 1, "Maria da Silva", 2000, 100.0);
+    contas.cadastrar(cc2);
 
-    let contaPou1: ContaPoupanca = new ContaPoupanca(contas.gerarNumero(), 125, 2, "Mariana dos Santos", 4000, 12);
-    contas.cadastrar(contaPou1);
+    let cp1: ContaPoupanca = new ContaPoupanca(contas.gerarNumero(), 125, 2, "Mariana dos Santos", 4000, 12);
+    contas.cadastrar(cp1);
 
-    let contaPou2: ContaPoupanca = new ContaPoupanca(contas.gerarNumero(), 125, 2, "Juliana Ramos", 8000, 15);
-    contas.cadastrar(contaPou2);
+    let cp2: ContaPoupanca = new ContaPoupanca(contas.gerarNumero(), 125, 2, "Juliana Ramos", 8000, 15);
+    contas.cadastrar(cp2);
 
     contas.listarTodas();
 
@@ -247,8 +247,8 @@ export function main(){
 function sobre(): void{
     console.log("\n*****************************************************");
     console.log("Projeto Desenvolvido por: ");
-    console.log("Generation Brasil - generation@generation.org");
-    console.log("github.com/conteudoGeneration");
+    console.log("Elzilane Barreto - barretoelzilane@gmail.com");
+    console.log("github.com/elzilanebarreto/projeto-conta-bancaria");
     console.log("*****************************************************");
 }
 
